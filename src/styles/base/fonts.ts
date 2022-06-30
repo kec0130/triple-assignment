@@ -2,7 +2,6 @@ import { css } from 'styled-components'
 
 const fonts = css`
   body {
-    margin: 0;
     font-family: sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue';
