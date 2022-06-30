@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import MetricItem from '../components/MetricItem'
 import AwardItem from '../components/AwardItem'
@@ -10,6 +10,16 @@ import colors from '../styles/constants/colors'
 interface BackgroundProps {
   backgroundImage: string
 }
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+  }
+`
 
 const SectionContent = styled.div`
   display: flex;
@@ -32,12 +42,18 @@ const ContentLogo = styled.div<BackgroundProps>`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  animation: ${fadeIn} 0.7s;
+`
+
+const MetricsContainer = styled.div`
+  animation: ${fadeIn} 0.7s 0.1s;
 `
 
 const AwardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  animation: ${fadeIn} 0.7s 0.2s;
 `
 
 export default function App() {
@@ -46,11 +62,11 @@ export default function App() {
       <SectionContent>
         <ContentLogo backgroundImage={tripleLogo}>2021년 12월 기준</ContentLogo>
         <div>
-          <div>
+          <MetricsContainer>
             <MetricItem number={700} unit="만 명" text="의 여행자" />
             <MetricItem number={100} unit="만 개" text="의 여행 리뷰" />
             <MetricItem number={470} unit="만 개" text="의 여행 일정" />
-          </div>
+          </MetricsContainer>
           <AwardsContainer>
             <AwardItem
               year={2018}
