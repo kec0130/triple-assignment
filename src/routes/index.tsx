@@ -42,18 +42,18 @@ const ContentLogo = styled.div<BackgroundProps>`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  animation: ${fadeIn} 0.7s;
+  animation: ${fadeIn} 700ms;
 `
 
 const MetricsContainer = styled.div`
-  animation: ${fadeIn} 0.7s 0.1s;
+  animation: ${fadeIn} 700ms 100ms;
 `
 
 const AwardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
-  animation: ${fadeIn} 0.7s 0.2s;
+  animation: ${fadeIn} 700ms 200ms;
 `
 
 export default function App() {

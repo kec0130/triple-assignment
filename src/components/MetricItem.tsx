@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import useCountUp from '../hooks/useCountUp'
 import colors from '../styles/constants/colors'
 
 interface MetricProps {
@@ -20,10 +21,12 @@ const Metric = styled.div`
 `
 
 export default function MetricItem({ number, unit, text }: MetricProps) {
+  const count = useCountUp(number)
+
   return (
     <Metric>
       <strong>
-        <span>{number}</span>
+        <span>{count}</span>
         {unit}
       </strong>
       {text}
