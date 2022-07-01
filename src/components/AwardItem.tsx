@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 import colors from '../styles/constants/colors'
+import { BackgroundImgContainer, BackgroundProps } from '../styles/shared'
 
-interface AwardProps {
+interface AwardProps extends BackgroundProps {
   year: number
   platform: string
   award: string
-  backgroundImage: string
 }
 
-const Award = styled.div<Pick<AwardProps, 'backgroundImage'>>`
+const Award = styled(BackgroundImgContainer)`
   display: flex;
   align-items: center;
   height: 54px;
@@ -18,10 +18,7 @@ const Award = styled.div<Pick<AwardProps, 'backgroundImage'>>`
   font-weight: 700;
   line-height: 22px;
   color: ${colors.gray800};
-  background-image: url(${({ backgroundImage }) => backgroundImage});
-  background-repeat: no-repeat;
   background-position: left center;
-  background-size: contain;
 
   & + & {
     margin-left: 38px;
@@ -32,10 +29,10 @@ export default function AwardItem({
   year,
   platform,
   award,
-  backgroundImage,
+  backgroundImg,
 }: AwardProps) {
   return (
-    <Award backgroundImage={backgroundImage}>
+    <Award backgroundImg={backgroundImg}>
       {year} {platform}
       <br />
       {award}
